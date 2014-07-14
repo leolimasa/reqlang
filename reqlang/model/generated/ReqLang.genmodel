@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/reqlang/src-gen" editDirectory="/reqlang.edit/src"
+    editorDirectory="/reqlang.editor/src" modelPluginID="reqlang" forceOverwrite="true"
+    modelName="ReqLang" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="reqlang.edit" editorPluginID="reqlang.editor"
+    runtimeVersion="2.10">
+  <genPackages prefix="ReqLang" basePackage="com.leo_sa" disposableProviderFactory="true"
+      fileExtensions="req" ecorePackage="ReqLang.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ReqLang.ecore#//Action">
+      <genEnumLiterals ecoreEnumLiteral="ReqLang.ecore#//Action/add"/>
+      <genEnumLiterals ecoreEnumLiteral="ReqLang.ecore#//Action/remove"/>
+      <genEnumLiterals ecoreEnumLiteral="ReqLang.ecore#//Action/modify"/>
+    </genEnums>
+    <genClasses ecoreClass="ReqLang.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ReqLang.ecore#//Model/modules"/>
+    </genClasses>
+    <genClasses ecoreClass="ReqLang.ecore#//Module"/>
+    <genClasses ecoreClass="ReqLang.ecore#//Class"/>
+    <genClasses ecoreClass="ReqLang.ecore#//Property"/>
+    <genClasses ecoreClass="ReqLang.ecore#//Function"/>
+    <genClasses ecoreClass="ReqLang.ecore#//Prefix">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ReqLang.ecore#//Prefix/functions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ReqLang.ecore#//Prefix/classes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ReqLang.ecore#//Prefix/returnType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ReqLang.ecore#//Prefix/properties"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ReqLang.ecore#//Prefix/args"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ReqLang.ecore#//Prefix/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ReqLang.ecore#//Prefix/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ReqLang.ecore#//Prefix/modifiers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ReqLang.ecore#//Prefix/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ReqLang.ecore#//Modifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ReqLang.ecore#//Modifier/private"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ReqLang.ecore#//Modifier/abstract"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ReqLang.ecore#//Modifier/static"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

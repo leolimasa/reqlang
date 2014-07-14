@@ -1,0 +1,49 @@
+grammar com.leo_sa.ReqLang with org.eclipse.xtext.common.Terminals
+
+generate reqLang "http://www.leo_sa.com/ReqLang"
+
+Model:
+	modules+=Module*
+;
+
+Module:
+	Prefix '='+ (
+		functions += Function
+		| classes += Class 	
+	)*
+;
+
+Class:
+	Prefix (':' returnType=[Class|ID])? '-'+
+	properties += Property*
+	functions += Function*
+;
+
+Property:
+	Prefix ':' returnType=[Class|ID]
+;
+
+Function:
+	Prefix '(' (args+=ID ','?)* ')' (':' returnType=[Class|ID])?
+	description+=DESC*
+;
+
+Prefix:
+	action=Action modifiers=Modifier name=ID
+;
+
+terminal DESC:
+	'*' !('\n'|'\r')* ('\r' '\n')?
+;
+
+enum Action:
+	add='+'
+	| remove='-'
+	| modify='^'
+;
+
+Modifier:
+	private?='p'?
+	& abstract?='@'?
+	& static?='$'?
+;
